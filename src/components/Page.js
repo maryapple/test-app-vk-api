@@ -3,6 +3,10 @@ import PropTypes from 'prop-types'
 
 
 export default class Page extends Component {
+    onBtnClick = e => {
+        const year = +e.currentTarget.innerText
+        this.props.setYear(year)
+    }
     render () {
         const { year, photos } = this.props
         return (
@@ -33,4 +37,6 @@ export default class Page extends Component {
 
 Page.propTypes = {
     year: PropTypes.number.isRequired,
+    photos: PropTypes.array.isRequired,
+    setYear: PropTypes.func.isRequired
 }
